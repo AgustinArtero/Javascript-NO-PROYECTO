@@ -1,12 +1,5 @@
-/*
-let fecha = Number (prompt("Ingrese su año de nacimiento"));
-const año = 2022;
 
-let edad = año - fecha;
-
-alert("Su edad es aproximada a"  + " " + edad); */
-
-
+/* PRACTICA 1RAS CLASES 
 let nota = Number(prompt("Ingrese su nota"));
 
     if (nota > 10) { 
@@ -17,10 +10,14 @@ let nota = Number(prompt("Ingrese su nota"));
         else {
             alert("TU NOTA ES APROBADA");
 }
+*/
 
 
-    /* 
-for (let i = 0; i <= 40; i++) {
-    console.log(i);
+// TRABAJO COMPLEMENTARIO CON FOR
+
+for (let i = 1; i <= 80; i++) {
     i = i + 1;
-} */
+    if (i === 22)
+        continue;
+    console.log(i);
+} 
