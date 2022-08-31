@@ -1,114 +1,30 @@
-function bienvenida () {
-    alert("Te estabamos esperando " + nombre + "! Pulsa en aceptar para ingresar a la Tienda de menús!");
-}
-
-function compraPrincipal() {
-    productoUno = prompt("Seleccione su comida principal \n 1 = Hamburguesa simple \n 2 = Hamburguesa con Cheddar \n 3 = Hamburguesa Triple Cheddar \n 4 = Empanadas de carne simples \n 5 = Saltear plato principal");
-        if (producto === 1) {
-            alert("Elegiste Hamburguesa simple")
-            sumaUno = hamburguesaSola * 0.64;
-        }
-        else if (producto === 2) {
-            alert("Elegiste Hamburguesa con Cheddar")
-            sumaUno = hamburguesaWCheddar * 0.64;
-        }
-        else if (producto === 3) {
-            alert("Elegiste Hamburguesa Triple Cheddar")
-            sumaUno = hamburguesaTripleCheddar * 0.64;
-        }
-        else if (producto === 4) {
-            alert("Elegiste Empanadas de carne")
-            sumaUno = empanadaCarne * 0.64;
-        }
-        else if (producto === 5) {
-            alert("Saltear plato principal")
-            sumaUno = sumaUno;
-        }
-
-        let opcion = Number(prompt("Seleccione segun su deseo: \n 1 = Plato para acompañar \n 2 =  Bebidas"))
-    if (opcion === 1) {
-        compraSecundaria();
-    } 
-    else if (opcion === 2) {
-        compraBebidas(); 
-    }
-    else if (opcion !== "1", "2") 
-    alert("El numero ingresado es erroneo.");
-
-}
-   // opcion = Number(prompt("Seleccione una opcion para continuar: \n 1 = Seguir con mi compra \n 2 = Pedir la cuenta \n 3 = Cancelar"));
-
-
-       
-
-    function compraSecundaria() {
-    productoDos = Number(prompt("Seleccione su comida principal \n 1 = Papas fritas \n 2 = Papas fritas Cheddar \n 3 = Ensalada comun (Lechuga, cebolla y tomate) \n 4 = Ensalada completa (Lechuga, tomate, cebolla, zanahoria y palta) \n 5 = Saltear a 'Bebidas'"));
-        if (producto === 1) {
-            alert("Elegiste Papas fritas")
-            sumaDos = papasFritas * 0.64;
-        }
-        else if (producto === 2) {
-            alert("Elegiste Papas fritas Cheddar")
-            sumaDos = papasWCheddar * 0.64;
-        }
-        else if (producto === 3) {
-            alert("Ensalada comun (Lechuga, cebolla y tomate)")
-            sumaDos = ensaladaComun * 0.64;
-        }
-        else if (producto === 4) {
-            alert("Ensalada completa (Lechuga, tomate, cebolla, zanahoria y palta)")
-            sumaDos = ensaladaCompleta * 0.64;
-        }
-        else if (producto === 5) {
-            alert("Siguiente paso")
-            sumaDos = sumaDos;
-        }
-
-    opcion = prompt("Seleccione una opcion para continuar: \n 1 = Seguir con mi compra \n 2 = Pedir la cuenta \n 3 = Cancelar");
-        
-        compraBebidas ();
-}
-
-function compraBebidas() {
-    productoTres = prompt("Seleccione su comida principal \n 1 = Cerveza \n 2 = CocaCola \n 3 = Sprite \n 4 = Agua \n 5 = No deseo bebida");
-        if (producto === 1) {
-            alert("Elegiste Cerveza")
-            sumaDos = cerveza * 0.64;
-        }
-        else if (producto === 2) {
-            alert("Elegiste CocaCola")
-            sumaDos = cocacola * 0.64;
-        }
-        else if (producto === 3) {
-            alert("Elegiste Sprite")
-            sumaDos = sprite * 0.64;
-        }
-        else if (producto === 4) {
-            alert("Elegiste Agua")
-            sumaDos = agua * 0.64;
-        }
-        else if (producto === 5) {
-            alert("No seleccionaste bebida")
-            sumaDos =  sumaTres;
-        }
-
-    opcion = prompt("Seleccione una opcion para continuar: \n 1 = Seguir con mi compra \n 2 = Pedir la cuenta \n 3 = Cancelar");
-        
-        finalizarCompra();
-}
-
-function finalizarCompra() {
-    total = sumaUno + sumaDos + sumaTres;
-    alert("El monto total del pedido es " + total);
-
-}
-
-
-
-
+// Variables declaradas 
 
 let nombre = prompt("Ingrese su nombre por favor");
 bienvenida();
+
+let productoUno;
+let productoDos;
+let productoTres;
+
+let sumaUno = 0;
+let sumaDos = 0;
+let sumaTres = 0;
+
+const hamburguesaSola = 400;
+const hamburguesaWCheddar = 590;
+const hamburguesaTripleCheddar = 800;
+const empanadaCarne = 160;
+
+const papasFritas = 250;
+const papasWCheddar = 350; 
+const ensaladaComun = 350;
+const ensaladaCompleta = 450;
+
+const cerveza = 300;
+const cocacola = 200;
+const sprite = 200;
+const agua = 100; 
 
 let opcion = Number(prompt("Seleccione segun su deseo: \n 1 = Plato principal \n 2 = Plato para acompañar \n 3 =  Bebidas"))
     if (opcion === 1) {
@@ -124,27 +40,109 @@ let opcion = Number(prompt("Seleccione segun su deseo: \n 1 = Plato principal \n
     alert("El numero ingresado es erroneo.");
 
 
-let productoUno;
-let productoDos;
-let productoTres;
+// functions
 
-let sumaUno = 0;
-let sumaDos = 0;
-let sumaTres = 0;
 
-let total = 0;
+function bienvenida () {
+    alert("Te estabamos esperando " + nombre + "! Pulsa en aceptar para ingresar a la Tienda de menús!");
+}
 
-let hamburguesaSola = 400;
-let hamburguesaWCheddar = 590;
-let hamburguesaTripleCheddar = 800;
-let empanadaCarne = 160;
+function compraPrincipal() {
+    productoUno = prompt("Seleccione su comida principal \n 1 = Hamburguesa simple \n 2 = Hamburguesa con Cheddar \n 3 = Hamburguesa Triple Cheddar \n 4 = Empanadas de carne simples \n 5 = Saltear plato principal");
+        if (productoUno === 1) {
+            console.log("Elegiste Hamburguesa simple")
+            sumaUno = hamburguesaSola;
+        }
+        else if (productoUno === 2) {
+            console.log("Elegiste Hamburguesa con Cheddar")
+            sumaUno = hamburguesaWCheddar;
+        }
+        else if (productoUno === 3) {
+            alconsole.log("Elegiste Hamburguesa Triple Cheddar")
+            sumaUno = hamburguesaTripleCheddar;
+        }
+        else if (productoUno === 4) {
+            console.log("Elegiste Empanadas de carne")
+            sumaUno = empanadaCarne;
+        }
+        else if (productoUno === 5) {
+            console.log("Saltear plato principal")
+            sumaUno = 0;
+        }
+        
 
-let papasFritas = 250;
-let papasWCheddar = 350; 
-let ensaladaComun = 350;
-let ensaladaCompleta = 450;
+        let option = Number(prompt("Seleccione una opcion para continuar: \n 1 = Seguir con mi compra \n 2 = Pedir la cuenta \n 3 = Cancelar"))
+        if (option === 1)
+        compraSecundaria();
+        else if (option === 2)
+        finalizarCompra();
+    
+}
 
-let cerveza = 300;
-let cocacola = 200;
-let sprite = 200;
-let agua = 100; 
+
+       
+
+    function compraSecundaria() {
+    productoDos = Number(prompt("Seleccione su comida secundaria \n 1 = Papas fritas \n 2 = Papas fritas Cheddar \n 3 = Ensalada comun (Lechuga, cebolla y tomate) \n 4 = Ensalada completa (Lechuga, tomate, cebolla, zanahoria y palta) \n 5 = Saltear a 'Bebidas'"));
+        if (productoDos === 1) { 
+            console.log("Elegiste Papas fritas")
+            sumaDos = papasFritas;
+        }
+        else if (productoDos === 2) {
+            console.log("Elegiste Papas fritas Cheddar")
+            sumaDos = papasWCheddar;
+        }
+        else if (productoDos === 3) {
+            console.log("Ensalada comun (Lechuga, cebolla y tomate)")
+            sumaDos = ensaladaComun;
+        }
+        else if (productoDos === 4) {
+            console.log("Ensalada completa (Lechuga, tomate, cebolla, zanahoria y palta)")
+            sumaDos = ensaladaCompleta;
+        }
+        else if (productoDos === 5) {
+            console.log("No quiere bebida")
+            sumaDos = 0;
+        }
+        
+        let option = Number(prompt("Seleccione una opcion para continuar: \n 1 = Seguir con mi compra \n 2 = Pedir la cuenta \n 3 = Cancelar"))
+        if (option === 1)
+            compraBebidas();
+            else if (option === 2)
+            finalizarCompra();
+}
+
+function compraBebidas() {
+    productoTres = prompt("Seleccione su bebida \n 1 = Cerveza \n 2 = CocaCola \n 3 = Sprite \n 4 = Agua \n 5 = No deseo bebida");
+        if (productoTres === 1) {
+            console.log("Elegiste Cerveza")
+            sumaTres = cerveza;
+        }
+        else if (productoTres === 2) {
+            console.log("Elegiste CocaCola")
+            sumaTres = cocacola;
+        }
+        else if (productoTres === 3) {
+            console.log("Elegiste Sprite")
+            sumaTres = sprite;
+        }
+        else if (productoTres === 4) {
+            alconsole.logert("Elegiste Agua")
+            sumaTres = agua;
+        }
+        else if (productoTres === 5) {
+            console.log("No seleccionaste bebida")
+            sumaTres =  0;
+        }
+        
+        let option = Number(prompt("Seleccione una opcion para continuar: \n 1 = Pedir la cuenta \n 2 = Cancelar"))
+        if (option === 1)
+        finalizarCompra();
+}
+
+function finalizarCompra() {
+    let total = sumaUno + sumaDos + sumaTres
+    alert("El monto total del pedido es " + total);
+}
+
+
